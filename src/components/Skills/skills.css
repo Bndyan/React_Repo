@@ -47,3 +47,22 @@
     font-size: 0.9rem;
     font-weight: 200;
 }
+@media screen and (max-width:720px) {
+    .skillBarText>p{
+        font-size: 2vw;
+    }
+    
+}
+@media screen and (max-width:480px) {
+    .skillBarText>p{
+        font-size: 2vw;
+    }
+    .skillBarImg{
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+    .skillBarText>h2{
+        font-size: 5vw;
+    }
+    
+}
