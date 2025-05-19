@@ -11,23 +11,23 @@ import Youtub from "../../assets/youtube.png";
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    // const form = useRef();
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
     
-    //     emailjs
-    //       .sendForm('service_7fph1ao', 'template_8lu5g3n', form.current, {
-    //         publicKey: 'LaX5OxbbFTWLBpfoHu9vK',
-    //       })
-    //       .then(
-    //         () => {
-    //           console.log('SUCCESS!');
-    //         },
-    //         (error) => {
-    //           console.log('FAILED...', error.text);
-    //         },
-    //       );
-    //   };
+        emailjs
+          .sendForm('service_7fph1ao', 'template_8lu5g3n', form.current, {
+            publicKey: 'RYVJ92S74oh5sbawM',
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
+      };
   return (
     <section id='contactPage'>
         <div id='clients'>
@@ -48,11 +48,24 @@ const Contact = () => {
             <h1 className='contactPageTile'>Contact Me</h1>
             <span className='contactDesc' >Please fill out the form below to discuss any work opportunies.</span>
 
-            <form className='contactForm'   
-                action="https://formspree.io/f/mvgaledn"
-                method="POST">
+            <form className='contactForm' ref={form} onSubmit={sendEmail}>
+                <input type='text' className='name' placeholder='Your Name' name='your_name'/>
+                <input type='email' className='email' placeholder='Your Email' name='your_email'/>
+                <textarea className='msg' name='message' rows="5" placeholder='Your Message' ></textarea>
 
+                <button type='submit' value="Send" className='submitBtn'>Submit</button>
 
+                <div className='links'>
+                    <img src={facebook} alt='Facebook' className='link' />
+                    <img src={Instagram} alt='Instagram' className='link' />
+                    <img src={Twitter} alt='Twitter' className='link' />
+                    <img src={Youtub} alt='Youtub' className='link' />
+                </div>
+            </form>
+
+            {/* <form className='contactForm' 
+             action="https://formspree.io/f/mvgaledn"
+              method="POST" >
                 <input type='text' className='name' placeholder='Your Name' name='name'/>
                 <input type='email' className='email' placeholder='Your Email' name='email'/>
                 <textarea className='msg' name='message' rows="5" placeholder='Your Message' ></textarea>
@@ -65,7 +78,7 @@ const Contact = () => {
                     <img src={Twitter} alt='Twitter' className='link' />
                     <img src={Youtub} alt='Youtub' className='link' />
                 </div>
-            </form>
+            </form> */}
         </div>
     </section>
   );
